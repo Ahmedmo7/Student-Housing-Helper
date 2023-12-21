@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'accounts',
     'landlords',
+    'contacts',
     'listings'
 ]
 
@@ -152,3 +153,10 @@ AUTH_USER_MODEL = 'accounts.UserAccount'
 CORS_ORIGIN_ALLOW_ALL = True
 
 FILE_UPLOAD_PERMISSIONs=0o060
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'housinghelpertest@gmail.com'
+EMAIL_HOST_PASSWORD = 'rtbsbzxittkjuwke'
+EMAIL_USE_TLS = True
