@@ -67,9 +67,18 @@ const Navbar = () => {
                     />
 
                     {/* Add user authentication and profile button */}
-                    <Button ml="4" colorScheme="teal" variant="outline">
-                        Sign In
-                    </Button>
+                    <Link as={RouterLink} to="/signup" mr="4" _hover={{ textDecoration: 'none', color: 'teal.500' }}>
+                        <Button ml="4" colorScheme="teal" variant="outline">
+                            Sign Up
+                        </Button>
+                    </Link>
+                    <Link as={RouterLink} to="/login" mr="4" _hover={{ textDecoration: 'none', color: 'teal.500' }}>
+                        <Button ml="4" colorScheme="teal" variant="outline">
+                            Log In
+                        </Button>
+                    </Link>
+
+
                 </Flex>
             </Flex>
         </Box>
