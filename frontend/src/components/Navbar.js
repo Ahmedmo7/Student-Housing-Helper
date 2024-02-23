@@ -43,16 +43,13 @@ const Navbar = () => {
 
                 <Flex align="center">
                     <Box>
-                        <Link as={RouterLink} to="/" mr="4" _hover={{ textDecoration: 'none', color: 'teal.500' }}>
-                            Home
-                        </Link>
                         <Link as={RouterLink} to="/listings" mr="4" _hover={{ textDecoration: 'none', color: 'teal.500' }}>
                             Listings
                         </Link>
                         {/* Add more navigation links as needed */}
                     </Box>
 
-                    <IconButton
+                    {/* <IconButton
                         icon={<FaSun />}
                         onClick={toggleColorMode}
                         variant="ghost"
@@ -64,7 +61,7 @@ const Navbar = () => {
                         onClick={toggleColorMode}
                         variant="ghost"
                         fontSize="20px"
-                    />
+                    /> */}
 
                     {/* Add user authentication and profile button */}
                     <Link as={RouterLink} to="/signup" mr="4" _hover={{ textDecoration: 'none', color: 'teal.500' }}>
