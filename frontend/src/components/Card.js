@@ -1,40 +1,62 @@
 // Card.js
 import React from 'react';
-import { Box, Image, Text, Badge, Flex } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
 
-const Card = ({ title, address, city, state, price, imageUrl, bedrooms, bathrooms, tags }) => {
+const Card = ({
+    imageUrl,
+    title,
+    address,
+    price,
+    sale_type,
+    home_type,
+    bedrooms,
+    bathrooms,
+    sqft,
+    onClick,
+}) => {
     return (
         <Box
             maxW="md"
             borderWidth="1px"
-            borderRadius="lg"
+            borderRadius="md"
             overflow="hidden"
-            boxShadow="md"
-            bg="white"
+            boxShadow="lg"
+            cursor="pointer"
+            onClick={onClick}
         >
-            <Image src={imageUrl} alt={title} h="200px" objectFit="cover" />
+            <Image src={imageUrl} alt={title} />
 
             <Box p="4">
-                <Flex justify="space-between" align="center" mb="2">
-                    <Badge borderRadius="full" px="2" colorScheme="teal">
-                        {tags}
-                    </Badge>
-                    <Text color="gray.500" fontSize="sm">
-                        {`${bedrooms} beds • ${bathrooms} baths`}
-                    </Text>
-                </Flex>
-
-                <Text fontWeight="semibold" fontSize="lg" mb="2" lineHeight="tight" isTruncated>
+                <Text fontSize="xl" fontWeight="semibold">
                     {title}
                 </Text>
-
-                <Text fontSize="md" color="gray.700" mb="2">
-                    {`${address}, ${city}, ${state}`}
+                <Text color="gray.600" fontSize="sm">
+                    {address}
+                </Text>
+                <Text color="teal.500" fontWeight="bold" mt="2">
+                    {price}
                 </Text>
 
-                <Text fontWeight="bold" fontSize="lg" color="teal.500">
-                    {`$${price}`}
-                </Text>
+                <Box mt="2" display="flex" justifyContent="space-between">
+                    <Text color="gray.600" fontSize="sm">
+                        {sale_type}
+                    </Text>
+                    <Text color="gray.600" fontSize="sm">
+                        {home_type}
+                    </Text>
+                </Box>
+
+                <Box mt="2" display="flex" justifyContent="space-between">
+                    <Text color="gray.600" fontSize="sm">
+                        {bedrooms} Beds
+                    </Text>
+                    <Text color="gray.600" fontSize="sm">
+                        {bathrooms} Baths
+                    </Text>
+                    <Text color="gray.600" fontSize="sm">
+                        {sqft} sqft
+                    </Text>
+                </Box>
             </Box>
         </Box>
     );
