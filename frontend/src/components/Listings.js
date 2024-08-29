@@ -18,10 +18,10 @@ const getRandomColor = () => {
     return colors[Math.floor(Math.random() * colors.length)];
 };
 
-const loader = new Loader({
-    apiKey: "AIzaSyCbyDVvzqaUBoi4CWPXfeuhyZwSI3TkvK8",
-    version: "weekly",
-});
+// const loader = new Loader({
+//     apiKey: ,
+//     version: "weekly",
+// });
 
 const Map = ({ propertyLocations, showListings, selectedListing, handleListingClick }) => {
     useEffect(() => {
